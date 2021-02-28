@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.Date;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -25,7 +25,7 @@ public class Transaction implements Serializable {
 
     private String name;
     private Double amount;
-    private Instant moment;
+    private Date moment;
 
     private TransactionType type;
 }

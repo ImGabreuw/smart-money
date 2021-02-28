@@ -5,9 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import me.gabreuw.smartmoney.domain.Transaction;
 import me.gabreuw.smartmoney.domain.enums.TransactionType;
-import me.gabreuw.smartmoney.utils.helpers.InstantHelper;
+import me.gabreuw.smartmoney.utils.helpers.DateHelper;
 
-import java.time.Instant;
+import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,7 +16,7 @@ public class TransactionDTO {
 
     private String name;
     private Double amount;
-    private Instant moment;
+    private Date moment;
 
     private TransactionType type;
 
@@ -32,6 +32,6 @@ public class TransactionDTO {
     }
 
     public String getMoment() {
-        return InstantHelper.format(moment);
+        return DateHelper.format(moment);
     }
 }

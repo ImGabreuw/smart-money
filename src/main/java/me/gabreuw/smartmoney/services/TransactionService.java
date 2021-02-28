@@ -7,7 +7,7 @@ import me.gabreuw.smartmoney.services.exceptions.EntityNotFound;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,11 +27,11 @@ public class TransactionService {
                 .orElseThrow(() -> new EntityNotFound(id));
     }
 
-    public List<TransactionDTO> findByMoment(Instant moment) {
+    public List<TransactionDTO> findByMoment(Date moment) {
         return transactionMapper(repository.findAllByMoment(moment));
     }
 
-    public List<TransactionDTO> findByMomentRange(Instant min, Instant max) {
+    public List<TransactionDTO> findByMomentRange(Date min, Date max) {
         return transactionMapper(repository.findAllByMomentBetween(min, max));
     }
 
